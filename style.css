@@ -1,4 +1,20 @@
-.parent {
+/* This is what we're laying out:
+
+     DISPLAY
+
+     C / * B
+
+     7 8 9 -
+
+     4 5 6 +
+           +
+     1 2 3 +
+
+     0 . = =
+
+*/
+
+.container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);
@@ -6,22 +22,22 @@
   grid-row-gap: 24px;
 }
 
-.div1 { grid-area: 1 / 1 / 2 / 5; }
-.div2 { grid-area: 2 / 1 / 3 / 2; }
-.div3 { grid-area: 2 / 2 / 3 / 3; }
-.div4 { grid-area: 2 / 3 / 3 / 4; }
-.div5 { grid-area: 2 / 4 / 3 / 5; }
-.div6 { grid-area: 3 / 1 / 4 / 2; }
-.div7 { grid-area: 3 / 2 / 4 / 3; }
-.div8 { grid-area: 3 / 3 / 4 / 4; }
-.div9 { grid-area: 3 / 4 / 4 / 5; }
-.div10 { grid-area: 4 / 1 / 5 / 2; }
-.div11 { grid-area: 4 / 2 / 5 / 3; }
-.div12 { grid-area: 4 / 3 / 5 / 4; }
-.div13 { grid-area: 4 / 4 / 6 / 5; }
-.div14 { grid-area: 5 / 1 / 6 / 2; }
-.div15 { grid-area: 5 / 2 / 6 / 3; }
-.div16 { grid-area: 5 / 3 / 6 / 4; }
-.div17 { grid-area: 6 / 1 / 7 / 2; }
-.div18 { grid-area: 6 / 2 / 7 / 3; }
-.div19 { grid-area: 6 / 3 / 7 / 5; }
+.display { grid-area: 1 / 1 / 2 / 5; }
+.clear { grid-area: 2 / 1 / 3 / 2; }
+.divide { grid-area: 2 / 2 / 3 / 3; }
+.multiply { grid-area: 2 / 3 / 3 / 4; }
+.backspace { grid-area: 2 / 4 / 3 / 5; }
+.number7 { grid-area: 3 / 1 / 4 / 2; }
+.number8 { grid-area: 3 / 2 / 4 / 3; }
+.number9 { grid-area: 3 / 3 / 4 / 4; }
+.minus { grid-area: 3 / 4 / 4 / 5; }
+.number4 { grid-area: 4 / 1 / 5 / 2; }
+.number5 { grid-area: 4 / 2 / 5 / 3; }
+.number6 { grid-area: 4 / 3 / 5 / 4; }
+.plus { grid-area: 4 / 4 / 6 / 5; }
+.number1 { grid-area: 5 / 1 / 6 / 2; }
+.number2 { grid-area: 5 / 2 / 6 / 3; }
+.number3 { grid-area: 5 / 3 / 6 / 4; }
+.number0 { grid-area: 6 / 1 / 7 / 2; }
+.point { grid-area: 6 / 2 / 7 / 3; }
+.equals { grid-area: 6 / 3 / 7 / 5; }
