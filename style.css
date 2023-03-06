@@ -46,7 +46,14 @@ body {
   font-family: "Merriweather Sans", sans-serif;
 }
 
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .container {
+  font-size: 24px;
   text-align: center;
   background-color: linen;
 }
@@ -63,7 +70,7 @@ body {
 }
 
 .secondary {
-  background-color: lightcyan;
+  background-color: lightskyblue;
 }
 
 .attention {
