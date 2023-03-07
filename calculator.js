@@ -131,12 +131,34 @@ function specialEntered(event) {
          break;
 
       case 'backspace':
-         // XXX this needs to change
+         // This is a little confusing, b/c of the decimal point
+
+         // Is the last char a decimal point
+         if (DisplayString.slice(-1) == ".") {
+            if (PointEntered) {
+               // Don't change the display, but effectively undo entering the point
+               PointEntered = false;
+               return;
+            } else {
+               // remove decimal point
+               DisplayString = DisplayString.slice(0, -1);
+            }
+         }
+
+         // remove last char
          DisplayString = DisplayString.slice(0, -1);
+
+
          // we don't like an empty display
          if (DisplayString == "") {
             DisplayString = "0";
          }
+
+         // finally, add back decimal point if needed
+         if (!DisplayString.includes(".")) {
+            DisplayString += ".";
+         }
+
          updateDisplay();
          break;
 
