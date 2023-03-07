@@ -27,12 +27,8 @@ function containsDecimalPoint(string) {
  * the display.
  */
 function digitEntered(event) {
-   // console.log(event);
    let div = event.currentTarget;
-   // console.log(div);
    console.log(`Digit entered: ${div.textContent}`);
-   // console.log(div.textContent);
-   // console.log(div.id);
 
    // Typically, we add entered keys to the display text
    // The exception is that we don't want extraneous leading 0's
@@ -52,9 +48,45 @@ function digitEntered(event) {
    updateDisplay();
 }
 
+/* Respond to a special key being pressed.
+ * So far this is just clear and backspace.
+ */
+function specialEntered(event) {
+   let div = event.currentTarget;
+   console.log(`Special key entered: ${div.textContent}`);
+   switch (div.id) {
+      case 'clear':
+         doClear();
+         break;
+      case 'backspace':
+         DisplayString = DisplayString.slice(0, -1);
+         // we don't like an empty display
+         if (DisplayString == "") {
+            DisplayString = "0";
+         }
+         updateDisplay();
+         break;
+      default:
+         // This shouldn't happen
+         console.warn(`Unknown special key: ${div.id}`);
+   }
+}
+
+/* Respond to an operation key being pressed.
+ * This includes the equals sign.
+ */
+function operationEntered(event) {
+   let div = event.currentTarget;
+   console.log(`Operation key entered: ${div.textContent}`);
+}
+
 function addEventListeners() {
     document.querySelectorAll('.digit').forEach(
         div => div.addEventListener('click', digitEntered));
+    document.querySelectorAll('.special').forEach(
+        div => div.addEventListener('click', specialEntered));
+    document.querySelectorAll('.operation').forEach(
+        div => div.addEventListener('click', operationEntered));
 }
 
 doClear();
